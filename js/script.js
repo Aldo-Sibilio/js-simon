@@ -47,3 +47,41 @@ const timer = setInterval(function(){
 
 }, 1000);
 
+// submit form
+form.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  const numeriUtente = [];
+
+  // prendo numeri input
+  for (let i = 0; i < inputs.length; i++) {
+
+    numeriUtente.push(parseInt(inputs[i].value));
+
+  }
+
+  console.log(numeriUtente);
+
+
+  // confronto numeri
+  const numeriIndovinati = [];
+
+  for (let i = 0; i < numeriUtente.length; i++) {
+
+    if (numeriRandom.includes(numeriUtente[i])) {
+
+      numeriIndovinati.push(numeriUtente[i]);
+
+    }
+
+  }
+
+  // risultato
+  message.innerHTML = `
+  Hai indovinato ${numeriIndovinati.length} numeri: 
+  ${numeriIndovinati}
+  `;
+
+});
+
