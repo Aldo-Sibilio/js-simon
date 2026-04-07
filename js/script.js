@@ -19,3 +19,31 @@ for (let i = 0; i < 5; i++) {
 }
 
 console.log(numeriRandom);
+
+// countdown
+let tempo = 30;
+
+countdown.innerHTML = tempo;
+
+const timer = setInterval(function(){
+
+  tempo--;
+
+  countdown.innerHTML = tempo;
+
+  if(tempo === 0){
+
+    clearInterval(timer);
+
+    // nascondo numeri
+    numbersList.classList.add("d-none");
+
+    // mostro form
+    form.classList.remove("d-none");
+
+    countdown.innerHTML = "Inserisci i numeri";
+
+  }
+
+}, 1000);
+
